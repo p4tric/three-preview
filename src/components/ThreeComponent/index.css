@@ -1,0 +1,22 @@
+.loading {
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  text-align: center;
+  font-weight: 300px;
+  font-size: 15.96px;
+  font-family: Apercu;
+}
+
+.modelContainer {
+  text-decoration: none;
+  transition: top 0.15s ease-in;
+  position: absolute;
+  top: 0%;
+}
+
+.longLoad {
+  width: 280px;
+  height: 200px;
+  object-fit: contain;
+}

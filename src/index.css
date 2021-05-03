@@ -1,0 +1,280 @@
+body {
+  background: #34283F;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-center-start {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.flex-center-between {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.primary-bg {
+  background: #7FAAE4;
+}
+
+.secondary-bg {
+  background: #834DB7;
+}
+
+.tertiary-bg {
+  background: #34283F;
+}
+
+.primary-text {
+  color: #7FAAE4;
+}
+
+.secondary-text {
+  color: #834DB7;
+}
+
+.tertiary-text {
+  color: #34283F;
+}
+
+.gray-text {
+  color: #a3a3a3;
+}
+
+.header-container {
+  background: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+  padding: 15px;
+}
+
+.header-text {
+  font-family: 'Helvetica Neue';
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 1.4rem;
+}
+
+.search-container {
+  border: 1px solid #e3e3e3;
+  border-radius: 5px;
+  height: 35px;
+  width: 20%;
+
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+}
+
+.search-box {
+  border: none;
+  outline: none;
+  margin-top: 7px;
+  margin-left: 5px;
+  font-size: 18px;
+  width: 100%;
+}
+
+.search-icon {
+  cursor: pointer;
+  margin-top: 6px;
+  margin-right: 9px;
+  width: 20px;
+  height: 20px;
+}
+
+.searchlist-container {
+  margin-top: 1rem;
+  padding: 20px;
+  overflow: scroll;
+  height: 70vh;
+}
+
+.searchlist-button {
+  display: flex;
+  justify-content: center;
+
+  button {
+    border-radius: 5px;
+    width: 200px;
+    height: 40px;
+    box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+  }
+}
+
+.searchitems-container {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: scroll;
+}
+
+.card-container {
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+  height: 180px;
+  margin: 20px;
+  width: 30%;
+}
+
+.card-img-container {
+  overflow: hidden;
+  flex: 1;
+  border-radius: 5px;
+}
+
+.parallelogram {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  width: 220px;
+  height: 180px;
+  margin: 0 0 0 -30px;
+  -webkit-transform: skew(-15deg);
+  -moz-transform: skew(-15deg);
+  -o-transform: skew(-15deg);
+  background: red;
+  overflow: hidden;
+  position: relative;
+}
+
+.imago {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  -webkit-transform: skew(0deg);
+  -moz-transform: skew(0deg);
+  -o-transform: skew(0deg);
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+
+.card-details {
+  position: absolute;
+  top: 15%;
+  left: 48%;
+}
+
+.card1-text {
+  font-family: 'Helvetica Neue';
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.card2-text {
+  font-family: 'Helvetica Neue';
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+}
+
+.card3-text {
+  font-family: 'Helvetica Neue';
+  font-size: 1rem;
+}
+
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+  .header-container {
+    background: white;
+    width: 92%;
+  }
+
+  .search-container {
+    width: 52%;
+    margin-right: 30px;
+    height: 38px;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .search-icon {
+    cursor: pointer;
+    margin-top: 6px;
+    margin-right: 9px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .searchlist-container {
+    margin-top: 0.5rem;
+    padding: 5px;
+  }
+
+  .searchlist-button {
+    display: flex;
+    justify-content: center;
+
+    button {
+      border-radius: 5px;
+      width: 200px;
+      height: 40px;
+      box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+    }
+  }
+
+  .searchitems-container {
+    display: flex;
+  }
+
+  .card-container {
+    height: 140px;
+    margin: 10px;
+    width: 100%;
+  }
+
+  .card-img-container {
+    overflow: hidden;
+    flex: 1;
+    border-radius: 5px;
+  }
+
+  .parallelogram {
+    width: 175px;
+    height: 140px;
+  }
+
+  .card-details {
+    position: absolute;
+    top: 15%;
+    left: 48%;
+  }
+
+  .card1-text {
+    font-size: 1rem;
+  }
+
+  .card2-text {
+    font-size: 0.8rem;
+  }
+
+  .card3-text {
+    font-size: 0.9rem;
+  }
+}
