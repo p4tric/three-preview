@@ -1,4 +1,4 @@
-# Three Preview Component
+# ThreeJS Preview Component Demo
 
 Using React and threeJS.
 
