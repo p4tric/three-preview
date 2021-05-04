@@ -9,6 +9,7 @@ export const initialBackground = {
   BLACK: 0x000000,
   GREY: 0x909090,
   WHITE: 0xffffff,
+  SKYBLUE: 'skyblue'
 };
 
 export const MAP_NAMES = [
@@ -31,11 +32,12 @@ export const product3D = {
   d3: 0.0705539324003,
   d4: 0.0805539324003,
   d5: 0.0805539324003,
+
   // cameraPosition: new THREE.Vector3(10, 0, 10),
-  cameraPosition: new THREE.Vector3(-360, 0, -420),
+  cameraPosition: new THREE.Vector3(0, 0, 3000),
 
   // objectRotation: new THREE.Euler(0, 10.9, 0.0001),
-  objectRotation: new THREE.Euler(0, 50.9, 0.0001),
+  objectRotation: new THREE.Euler(-550, 50.9, 100),
 };
 
 export const getModelWidth = (width, height) => {
