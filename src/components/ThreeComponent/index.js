@@ -5,7 +5,6 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader.js';
 
-import fbx1 from '../../assets/fbx/dFiles/fbx1.fbx';
 import grass1 from '../../assets/textures/grasslight-big.jpg';
 
 // Images
@@ -33,7 +32,7 @@ let requestID;
 let scene;
 
 const ThreeComponent = ({
-  fbxFile = fbx1,
+  fbxFile,
   groundTextureFile = grass1,
   containerHeight = getHeight(),
   containerWidth = getWidth(),
