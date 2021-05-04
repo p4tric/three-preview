@@ -34,10 +34,11 @@ export const product3D = {
   d5: 0.0805539324003,
 
   // cameraPosition: new THREE.Vector3(10, 0, 10),
-  cameraPosition: new THREE.Vector3(0, 0, 3000),
+  // delicate upon increment
+  cameraPosition: new THREE.Vector3(10, 0, 10),
 
-  // objectRotation: new THREE.Euler(0, 10.9, 0.0001),
-  objectRotation: new THREE.Euler(-550, 50.9, 100),
+  // not used in component; delicate upon increment
+  objectRotation: new THREE.Euler(0, 23.5, 0),
 };
 
 export const getModelWidth = (width, height) => {

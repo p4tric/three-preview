@@ -55,7 +55,7 @@ const ThreeComponent = ({
     // in the xz plane from the center of the box
     const direction = new THREE.Vector3()
       .subVectors(camera.position, boxCenter)
-      .multiply(new THREE.Vector3(1, -7, 1))
+      .multiply(new THREE.Vector3(-3, -2, 1))
       .normalize();
 
     // move the camera to a position distance units way from the center
@@ -131,8 +131,10 @@ const ThreeComponent = ({
         return;
       }
       if (Array.isArray(node.material)) {
+        console.log('[TRA1] ', node.material);
         mutatedMaterials = node.material.map(mat => mutateNodeMaterial(mat));
       } else {
+        console.log('[TRA2] ', node.material);
         mutatedMaterial = mutateNodeMaterial(node.material);
       }
 
@@ -232,6 +234,7 @@ const ThreeComponent = ({
       const time = - performance.now() / 11; // 20
       // grid.position.z = (time) % 100;
 
+      // make grass move
       mesh.position.z = (time) % 100;
 
       renderer.render(scene, camera);
@@ -298,7 +301,10 @@ const ThreeComponent = ({
 		const loader = new FBXLoader();
 		loader.load(threeD.dae, obj => {
 			mixer = new THREE.AnimationMixer(obj);
-			const actions = {};
+
+      console.log('[FBX] ', obj);
+
+      const actions = {};
       const emotes = ['Gallop', 'Giddy Up', 'Jokey', 'Jump', 'Trot', 'Walk', 'iddle 01', 'iddle 02' ];
 
       obj.animations.map(anim => {
@@ -316,22 +322,30 @@ const ThreeComponent = ({
       });
 
       // set default animation here
-      const activeAction = actions.Walk;
-      activeAction.clampWhenFinished = true;
-      activeAction.loop = THREE.LoopRepeat;
-      activeAction
-  			.reset()
-  			.setEffectiveTimeScale(3)
-  			.setEffectiveWeight(1)
-  			.fadeIn(0.5)
-  			.play();
+      console.log('[ACTIONS] ', actions);
+      if (Object.keys(actions).length > 0) {
+        const activeAction = actions.["Armature|ArmatureAction"];
+        activeAction.clampWhenFinished = true;
+        activeAction.loop = THREE.LoopRepeat;
+        activeAction
+    			.reset()
+    			.setEffectiveTimeScale(3)
+    			.setEffectiveWeight(1)
+    			.fadeIn(0.5)
+    			.play();
+      }
+
 
       traverseAlpha(obj);
       setContent(obj);
 
       obj.position.set(2, 0, 0);
       camera.position.copy(product3D.cameraPosition);
-			scene.add(obj);
+
+      // TEMP
+      obj.rotation.copy(product3D.objectRotation);
+
+      scene.add(obj);
 
       const box = new THREE.Box3().setFromObject(obj.parent);
       const boxSize = box.getSize(new THREE.Vector3()).length();
@@ -340,7 +354,7 @@ const ThreeComponent = ({
       frameArea(modelWidth * 0.5, boxSize, boxCenter);
 
       controls.target.copy(boxCenter);
-      controls.minDistance = 500;
+      controls.minDistance = 300;
       controls.maxDistance = Infinity;
       controls.update();
     },
